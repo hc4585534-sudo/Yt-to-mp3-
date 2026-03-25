@@ -77,7 +77,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ydl_base = {
         'outtmpl': '%(title)s.%(ext)s',
         'quiet': True,
-        'cookiefile': 'cookies.txt'  # 🔥 IMPORTANT
+        "cookiefile": os.getenv("COOKIES_FILE", "cookies.txt")  # 🔥 IMPORTANT
     }
 
     # 🎬 VIDEO
