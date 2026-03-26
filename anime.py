@@ -79,6 +79,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "cookiefile": "cookies.txt",
         "no_check_certificate": True,
         "geo_bypass": True,
+        "proxy": "http://123.45.67.89:8080"
         "http_headers": {
         "User-Agent": "Mozilla/5.0"
           },# 🔥 IMPORTANT
