@@ -77,18 +77,23 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         'outtmpl': '%(title)s.%(ext)s',
         'quiet': True,
         "cookiefile": "cookies.txt",
-        "nocheckcertificate": True,
+        "no_check_certificate": True,
         "geo_bypass": True,
         "http_headers": {
         "User-Agent": "Mozilla/5.0"
           }  # 🔥 IMPORTANT
+        "extractor_args": {
+           "youtube": {
+             "player_client": ["android"]
+           }
+        }
     }
 
     # 🎬 VIDEO
     if mode == "video":
         ydl_opts = {
             **ydl_base,
-            'format': 'best'
+            'format': 'bv*+ba/b'
         }
 
         try:
