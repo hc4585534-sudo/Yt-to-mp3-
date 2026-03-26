@@ -81,10 +81,10 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "geo_bypass": True,
         "http_headers": {
         "User-Agent": "Mozilla/5.0"
-          }, # 🔥 IMPORTANT
+          },# 🔥 IMPORTANT
         "extractor_args": {
            "youtube": {
-             "player_client": ["android"]
+              "skip": ["hls", "dash"]
            }
         }
     }
@@ -92,8 +92,9 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # 🎬 VIDEO
     if mode == "video":
         ydl_opts = {
-            **ydl_base,
-            'format': 'bestvideo+bestaudio/best'
+          **ydl_base,
+          'format': 'best',
+          'noplaylist': True
         }
 
         try:
