@@ -77,7 +77,12 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ydl_base = {
         'outtmpl': '%(title)s.%(ext)s',
         'quiet': True,
-        "cookiefile": os.getenv("COOKIES_FILE", "cookies.txt")  # 🔥 IMPORTANT
+        "cookiefile": "cookies.txt",
+        "nocheckcertificate": True,
+        "geo_bypass": True,
+        "http_headers": {
+        "User-Agent": "Mozilla/5.0"
+          }  # 🔥 IMPORTANT
     }
 
     # 🎬 VIDEO
