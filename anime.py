@@ -1,4 +1,3 @@
-
 import os
 import asyncio
 import random
@@ -89,7 +88,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if mode == "video":
         ydl_opts = {
             **ydl_base,
-            'format': 'bestvideo+bestaudio/best'
+            'format': 'best'
         }
 
         try:
