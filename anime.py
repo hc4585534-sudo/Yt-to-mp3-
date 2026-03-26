@@ -93,7 +93,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if mode == "video":
         ydl_opts = {
             **ydl_base,
-            'format': 'bv*+ba/b'
+            'format': 'bestvideo+bestaudio/best'
         }
 
         try:
